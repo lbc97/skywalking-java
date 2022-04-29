@@ -35,7 +35,7 @@ public class CodeFirstPojoHelloProviderImpl implements Hello {
     }
 
     @Override
-    public CompletableFuture<String> sayHello(Person person) {
+    public CompletableFuture<String> sayHi_asyn(Person person) {
         CompletableFuture<String> future = new CompletableFuture<>();
         future.complete("Pojo Hello person " + person.getName());
         return future;

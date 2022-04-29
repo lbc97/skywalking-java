@@ -41,20 +41,20 @@ public class CodeFirstPojoConsumerHelloImpl {
     public String say() {
         String repo = "sayHi invoke filed";
         try {
-            repo = hello.sayHi("Java Chassis");
+            repo = "result : " + hello.sayHi("Java Chassis");
         } catch (Exception e) {
             LOGGER.error("sayHi invoke filed");
         }
-        return repo;
+        String repo_asny = " asny result : " + say_asny("tom");
+        return repo + repo_asny;
     }
 
-    @RequestMapping(path = "/say1", method = RequestMethod.GET)
-    public String say1(@RequestParam String name) {
+    public String say_asny(@RequestParam String name) {
         Person person = new Person();
         person.setName(name);
         String repo = "hello";
         try {
-             repo = hello.sayHello(person).get();
+            repo = hello.sayHi_asyn(person).get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

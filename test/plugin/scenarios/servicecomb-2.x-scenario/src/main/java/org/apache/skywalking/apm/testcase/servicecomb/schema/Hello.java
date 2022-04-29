@@ -26,5 +26,5 @@ public interface Hello {
 
     String sayHi(String name);
 
-    CompletableFuture<String> sayHello(Person person);
+    CompletableFuture<String> sayHi_asyn(Person person);
 }
